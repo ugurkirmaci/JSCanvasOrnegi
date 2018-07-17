@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <canvas id= "tuval" width="640" height="480" style="border:1px solid;">
+         Bu browser canvas desteklemiyor   
+        </canvas>
+        <script>
+            function tiklama (e){
+            cizim.beginPath();
+            cizim.arc(e.x,e.y,50,0,2*Math.PI);
+            cizim.stroke();
+
+
+            };
+           var tuval = document.getElementById("tuval");//cizim alanı belirleme 
+           var cizim = tuval.getContext("2d");//2boyutlu bir çizim alanı olusturma
+           
+           tuval.addEventListener('click',tiklama);
+        
+           cizim.beginPath();
+           cizim.moveTo(0,0);//çizimin başlangıç noktası 
+           cizim.lineTo(300,300);//lineTo 'nun amacı çizerek git
+           cizim.lineTo(400,300);
+           cizim.moveTo(400,0);
+           cizim.lineTo(500,100);
+           cizim.moveTo(350,200);
+           cizim.arc(300,200,50,0,2*Math.PI);//cizim arc fonksiyonu herzaman radyan cinsiyle hesaplanır.
+           cizim.font ="20px Arial";// piksel ve font belirleme
+           cizim.fillText ("Bilgisayar Kavramlari",280,320 );// istediğimiz şeyi bastırma 
+           cizim.fillRect(500,400,580,420);//x,y, width , height    
+           cizim.stroke();
+        </script>
+    </body>
+</html>
